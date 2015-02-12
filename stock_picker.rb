@@ -4,14 +4,13 @@ def stock_picker(prices)
 
 	prices.each do |i|
 		prices.each do |j|
-			if prices.index(i).to_i < prices.index(j).to_i
+			if prices.index(i) < prices.index(j)
 				if j - i > profit
 					profit = j-i
 					best_days = "Buy on day #{prices.index(i)} and sell on day #{prices.index(j)}"
 				end
 			end
 		end
-		i += 1
 	end
 	puts profit
 	puts best_days
